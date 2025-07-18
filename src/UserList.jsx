@@ -43,7 +43,7 @@ function UserList() {
             <div className="row">
                 {
                     usersData.map((user) => (
-                        <div className='col-md-3'>
+                        <div className='col-md-3' key={user.id}>
                             <Card>
                                 <Card.Body>
                                     <Card.Title>Name: {user.name}</Card.Title>
