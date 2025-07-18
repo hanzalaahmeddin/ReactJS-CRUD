@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 
 function UserEdit() {
     const { id } = useParams()
@@ -11,6 +11,7 @@ function UserEdit() {
     const [email, setUserEmail] = useState('');
     const [age, setUserAge] = useState('');
     const url = "http://localhost:3000/users/" + id;
+    const navigate = useNavigate()
     useEffect(() => {
         updateUserData()
     }, [])
@@ -32,6 +33,7 @@ function UserEdit() {
         response = await response.json()
         if (response) {
             alert("user successfully updated ")
+            navigate('/')
         }
 
     }
