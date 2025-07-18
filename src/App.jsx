@@ -6,6 +6,7 @@ import UserAdd from './UserAdd'
 import Header from './Header'
 import Footer from './Footer'
 import Home from './Home'
+import UserEdit from './UserEdit'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/user-list" element={<UserList />} />
           <Route path="/add-user" element={<UserAdd />} />
+          <Route path='/edit/:id' element={<UserEdit />} />
         </Routes>
       </main>
       <Footer />
